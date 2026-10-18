@@ -1,10 +1,11 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { fetchCategoriesRequest } from "../api/categoryApi";
 import type { Category } from "../types";
 
 export const useCategories = () => {
   const [categories, setCategories] = useState<Category[]>([]);
   const [error, setError] = useState<string | null>(null);
+  const [version, setVersion] = useState(0);
 
   useEffect(() => {
     let cancelled = false;
@@ -18,7 +19,9 @@ export const useCategories = () => {
     return () => {
       cancelled = true;
     };
-  }, []);
+  }, [version]);
 
-  return { categories, error };
+  const reload = useCallback(() => setVersion((value) => value + 1), []);
+
+  return { categories, error, reload };
 };
