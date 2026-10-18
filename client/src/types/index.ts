@@ -101,3 +101,22 @@ export interface AdminInsights {
   recentExpenses: AdminExpense[];
   recentUsers: AdminUserSummary[];
 }
+
+export type SortField = "date" | "amount";
+export type SortOrder = "asc" | "desc";
+
+// Every filter value is a string (or number for paging) so form inputs bind
+// directly to it. An empty string means "no filter".
+export interface ExpenseFilters {
+  search: string;
+  category: string;
+  paymentMethod: PaymentMethod | "";
+  startDate: string;
+  endDate: string;
+  minAmount: string;
+  maxAmount: string;
+  sortBy: SortField;
+  order: SortOrder;
+  page: number;
+  limit: number;
+}
