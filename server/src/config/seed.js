@@ -10,6 +10,6 @@ export const seedCategories = async () => {
   }
 
   for (const name of DEFAULT_CATEGORIES) {
-    await Category.updateOne({ name }, { $setOnInsert: { name } }, { upsert: true });
+    await Category.updateOne({ name }, { $setOnInsert: { name } }, { upsert: true, timestamps: false });
   }
 };

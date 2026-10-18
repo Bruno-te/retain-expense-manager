@@ -4,6 +4,8 @@ import dotenv from "dotenv";
 import { connectDB } from "./config/db.js";
 import { seedCategories } from "./config/seed.js";
 import authRoutes from "./routes/authRoutes.js";
+import categoryRoutes from "./routes/categoryRoutes.js";
+import expenseRoutes from "./routes/expenseRoutes.js";
 
 dotenv.config();
 
@@ -17,6 +19,8 @@ app.get("/api/health", (req, res) => {
 });
 
 app.use("/api/auth", authRoutes);
+app.use("/api/categories", categoryRoutes);
+app.use("/api/expenses", expenseRoutes);
 
 const PORT = process.env.PORT || 5001;
 
