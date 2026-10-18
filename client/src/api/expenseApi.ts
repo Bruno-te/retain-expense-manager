@@ -18,6 +18,9 @@ const buildQuery = (filters: ExpenseFilters): string => {
 export const fetchExpensesRequest = (filters: ExpenseFilters) =>
   api.get<PaginatedExpenses>(`/expenses?${buildQuery(filters)}`);
 
+export const getExpenseRequest = (id: string) =>
+  api.get<{ expense: Expense }>(`/expenses/${id}`);
+
 export const createExpenseRequest = (input: ExpenseInput) =>
   api.post<{ expense: Expense }>("/expenses", input);
 

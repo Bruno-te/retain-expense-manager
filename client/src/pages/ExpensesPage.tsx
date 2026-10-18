@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { Link } from "react-router-dom";
 import { useAppDispatch, useAppSelector } from "../store/hooks";
 import { fetchExpenses } from "../store/expensesSlice";
 import FilterBar from "../components/FilterBar";
@@ -23,7 +24,12 @@ const ExpensesPage = () => {
 
   return (
     <>
-      <h1 className="h3 mb-3">Expenses</h1>
+      <div className="d-flex justify-content-between align-items-center mb-3">
+        <h1 className="h3 mb-0">Expenses</h1>
+        <Link to="/expenses/new" className="btn btn-primary">
+          Add expense
+        </Link>
+      </div>
       <FilterBar />
       <ExpenseTable />
       <Pagination />
