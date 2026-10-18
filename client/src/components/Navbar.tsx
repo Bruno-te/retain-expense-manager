@@ -47,6 +47,13 @@ const Navbar = () => {
                 </NavLink>
               </li>
             )}
+            {isAuthenticated && (
+              <li className="nav-item">
+                <NavLink className={linkClass} to="/expenses" onClick={close}>
+                  Expenses
+                </NavLink>
+              </li>
+            )}
             {isAdmin && (
               <li className="nav-item">
                 <NavLink className={linkClass} to="/admin" onClick={close}>

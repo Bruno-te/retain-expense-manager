@@ -4,6 +4,7 @@ import ProtectedRoute from "./components/ProtectedRoute";
 import LoginPage from "./pages/LoginPage";
 import RegisterPage from "./pages/RegisterPage";
 import DashboardPage from "./pages/DashboardPage";
+import ExpensesPage from "./pages/ExpensesPage";
 import AdminPage from "./pages/AdminPage";
 import NotFoundPage from "./pages/NotFoundPage";
 
@@ -16,6 +17,7 @@ function App() {
 
         <Route element={<ProtectedRoute />}>
           <Route path="/" element={<DashboardPage />} />
+          <Route path="/expenses" element={<ExpensesPage />} />
         </Route>
 
         <Route element={<ProtectedRoute requireAdmin />}>
