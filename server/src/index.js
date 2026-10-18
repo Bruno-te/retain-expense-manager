@@ -8,6 +8,7 @@ import categoryRoutes from "./routes/categoryRoutes.js";
 import expenseRoutes from "./routes/expenseRoutes.js";
 import budgetRoutes from "./routes/budgetRoutes.js";
 import dashboardRoutes from "./routes/dashboardRoutes.js";
+import adminRoutes from "./routes/adminRoutes.js";
 
 dotenv.config();
 
@@ -25,6 +26,7 @@ app.use("/api/categories", categoryRoutes);
 app.use("/api/expenses", expenseRoutes);
 app.use("/api/budgets", budgetRoutes);
 app.use("/api/dashboard", dashboardRoutes);
+app.use("/api/admin", adminRoutes);
 
 const PORT = process.env.PORT || 5001;
 

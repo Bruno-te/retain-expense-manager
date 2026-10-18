@@ -1,9 +1,19 @@
 import { Router } from "express";
-import { listCategories } from "../controllers/categoryController.js";
-import { protect } from "../middleware/auth.js";
+import {
+  listCategories,
+  createCategory,
+  updateCategory,
+  deleteCategory,
+} from "../controllers/categoryController.js";
+import { protect, adminOnly } from "../middleware/auth.js";
 
 const router = Router();
 
-router.get("/", protect, listCategories);
+router.use(protect);
+
+router.get("/", listCategories);
+router.post("/", adminOnly, createCategory);
+router.put("/:id", adminOnly, updateCategory);
+router.delete("/:id", adminOnly, deleteCategory);
 
 export default router;
