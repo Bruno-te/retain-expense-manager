@@ -7,7 +7,13 @@ Retain is a full-stack web application for recording personal expenses, setting 
 | | URL |
 |---|---|
 | Frontend | https://earnest-dragon-4eeba3.netlify.app |
-| API | `<RENDER-API-URL>` (health check: `/api/health`) |
+| API |  https://retain-expense-manager-srdn.onrender.com (health check: `/api/health`) |
+
+### Login creditions
+
+|| Admin : admin@retain.com   password : Adminwork123
+|| tester: test@example.com   password : secret123
+
 
 **Cold starts:** the API runs on a free hosting plan that spins down after 15 minutes without traffic. The first request after a quiet period can take up to about 30 seconds. After that it responds normally.
 
