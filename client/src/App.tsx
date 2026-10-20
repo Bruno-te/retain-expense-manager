@@ -7,6 +7,7 @@ import DashboardPage from "./pages/DashboardPage";
 import ExpensesPage from "./pages/ExpensesPage";
 import NewExpensePage from "./pages/NewExpensePage";
 import EditExpensePage from "./pages/EditExpensePage";
+import ExpenseDetailPage from "./pages/ExpenseDetailPage";
 import AdminPage from "./pages/AdminPage";
 import NotFoundPage from "./pages/NotFoundPage";
 
@@ -21,6 +22,7 @@ function App() {
           <Route path="/" element={<DashboardPage />} />
           <Route path="/expenses" element={<ExpensesPage />} />
           <Route path="/expenses/new" element={<NewExpensePage />} />
+          <Route path="/expenses/:id" element={<ExpenseDetailPage />} />
           <Route path="/expenses/:id/edit" element={<EditExpensePage />} />
         </Route>
 

@@ -99,7 +99,14 @@ const ExpenseTable = () => {
             {items.map((expense) => (
               <tr key={expense._id}>
                 <td>
-                  <div>{expense.title}</div>
+                  <div>
+                    <Link
+                      to={`/expenses/${expense._id}`}
+                      className="text-decoration-none fw-semibold"
+                    >
+                      {expense.title}
+                    </Link>
+                  </div>
                   {expense.notes && (
                     <div className="small text-muted">{expense.notes}</div>
                   )}
